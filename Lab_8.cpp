@@ -4,14 +4,11 @@
 int main()
 {
     auto maze = new Maze(5, 5);
-    maze->makeConnection(0, 0, 0, 1);
-    maze->makeConnection(0, 1, 1, 1);
-    maze->makeConnection(1, 1, 1, 2);
-    maze->makeConnection(1, 2, 2, 2);
-    maze->makeConnection(2, 2, 2, 3);
-    maze->makeConnection(2, 3, 3, 3);
-    maze->makeConnection(3, 3, 3, 4);
-    maze->makeConnection(3, 4, 4, 4);
+    for (auto i = 0; i < 5; i++)
+    {
+        maze->makeConnection(i, i, i, i + 1);
+        maze->makeConnection(i, i + 1, i + 1, i + 1);
+    }
     maze->printMaze();
     system("pause");
     return 0;
